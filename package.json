@@ -1,0 +1,54 @@
+{
+  "name": "decentralized-voting-system",
+  "version": "1.0.0",
+  "description": "Secure, transparent, and verifiable blockchain-based voting platform",
+  "scripts": {
+    "install:all": "npm run install:contracts && npm run install:backend && npm run install:frontend",
+    "install:contracts": "cd contracts && npm install",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "dev": "docker-compose up",
+    "dev:contracts": "cd contracts && npx hardhat node",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:contracts && npm run build:backend && npm run build:frontend",
+    "build:contracts": "cd contracts && npm run compile",
+    "build:backend": "cd backend && echo 'No build step for backend'",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:contracts && npm run test:backend",
+    "test:contracts": "cd contracts && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "deploy:local": "cd contracts && npm run deploy:local",
+    "deploy:sepolia": "cd contracts && npm run deploy:sepolia",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "clean": "npm run clean:contracts && npm run clean:backend && npm run clean:frontend",
+    "clean:contracts": "cd contracts && rm -rf artifacts cache typechain-types",
+    "clean:backend": "cd backend && rm -rf node_modules dist",
+    "clean:frontend": "cd frontend && rm -rf node_modules dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/decentralized-voting-system"
+  },
+  "keywords": [
+    "blockchain",
+    "voting",
+    "ethereum",
+    "smart-contracts",
+    "decentralized",
+    "web3"
+  ],
+  "author": "DVS Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
